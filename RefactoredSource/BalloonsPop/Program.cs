@@ -3,26 +3,11 @@ using System.Collections.Generic;
 
 namespace Balloons_Pops_game
 {
-    public struct structOfRow : IComparable<structOfRow>
-    {
+    
 
-        public int Value;
-        public string Name;
-        public structOfRow(int value, string name)
-        {
-
-            Value = value;
-            Name = name;
-        }
-
-        public int CompareTo(structOfRow other)
-        {
-            return Value.CompareTo(other.Value);
-        }
-    }
     class Program
     {
-        static byte[,] gen(byte rows, byte columns)
+        static byte[,] GeneratePlayField(byte rows, byte columns)
         {
             byte[,] temp = new byte[rows, columns];
             Random randNumber = new Random();
@@ -30,9 +15,6 @@ namespace Balloons_Pops_game
             {
                 for (byte column = 0; column < columns; column++)
                 {
-
-
-
                     byte tempByte = (byte)randNumber.Next(1, 5);
                     temp[row, column] = tempByte;
                 }
@@ -83,114 +65,75 @@ namespace Balloons_Pops_game
             }
             Console.WriteLine();
         }
-        static void checkLeft(byte[,] matrix, int row, int column, int searchedItem)
-        {
-            int newRow = row;
-            int newColumn = column - 1;
-            try
-            {
-                if (matrix[newRow, newColumn] == searchedItem)
-                {
-                    matrix[newRow, newColumn] = 0; checkLeft(matrix, newRow, newColumn, searchedItem);
-                }
-                else return;
-            }
-            catch (IndexOutOfRangeException)
-            { return; }
 
-        }
-        static void checkRight(byte[,] matrix, int row, int column, int searchedItem)
+        static void PopRowsAndCols(byte[,] gameField, int row, int col, int searchedItem, int direction)
         {
-            int newRow = row;
-            int newColumn = column + 1;
-            try
+            if (row < 0 || row >= gameField.GetLength(0) || col < 0 || col >= gameField.GetLength(1))
             {
-                if (matrix[newRow, newColumn] == searchedItem)
-                {
-                    matrix[newRow, newColumn] = 0;
-                    checkRight(matrix, newRow, newColumn, searchedItem);
-                }
-                else return;
+                return;
             }
-            catch (IndexOutOfRangeException)
-            { return; }
 
-        }
-        static void checkUp(byte[,] matrix, int row, int column, int searchedItem)
-        {
-            int newRow = row + 1;
-            int newColumn = column;
-            try
+            if (searchedItem != gameField[row, col])
             {
-                if (matrix[newRow, newColumn] == searchedItem)
-                {
-                    matrix[newRow, newColumn] = 0;
-                    checkUp(matrix, newRow, newColumn, searchedItem);
-                }
-                else return;
+                return;
             }
-            catch (IndexOutOfRangeException)
-            { return; }
+
+            gameField[row, col] = 0;
+
+            switch (direction)
+            {
+                case 1: PopRowsAndCols(gameField, row - 1, col, searchedItem, direction); break;
+                case 2: PopRowsAndCols(gameField, row + 1, col, searchedItem, direction); break;
+                case 3: PopRowsAndCols(gameField, row, col - 1, searchedItem, direction); break;
+                case 4: PopRowsAndCols(gameField, row, col + 1, searchedItem, direction); break;
+                default:
+                    break;
+            }
         }
 
-        static void checkDown(byte[,] matrix, int row, int column, int searchedItem)
-        {
-            int newRow = row - 1;
-            int newColumn = column;
-            try
-            {
-                if (matrix[newRow, newColumn] == searchedItem)
-                {
-                    matrix[newRow, newColumn] = 0;
-                    checkDown(matrix, newRow, newColumn, searchedItem);
-                }
-                else return;
-            }
-            catch (IndexOutOfRangeException)
-            { return; }
 
-        }
-        static bool change(byte[,] matrixToModify, int rowAtm, int columnAtm)
+        static bool PopBalloons(byte[,] matrixToModify, int row, int col)
         {
-            if (matrixToModify[rowAtm, columnAtm] == 0)
+            if (matrixToModify[row, col] == 0)
             {
                 return true;
             }
-            byte searchedTarget = matrixToModify[rowAtm, columnAtm];
-            matrixToModify[rowAtm, columnAtm] = 0;
-            checkLeft(matrixToModify, rowAtm, columnAtm, searchedTarget);
-            checkRight(matrixToModify, rowAtm, columnAtm, searchedTarget);
+            byte searchedTarget = matrixToModify[row, col];
+            matrixToModify[row, col] = 0;
 
-
-            checkUp(matrixToModify, rowAtm, columnAtm, searchedTarget);
-            checkDown(matrixToModify, rowAtm, columnAtm, searchedTarget);
+            PopRowsAndCols(matrixToModify, row, col - 1, searchedTarget, 3);
+            PopRowsAndCols(matrixToModify, row, col + 1, searchedTarget, 4);
+            PopRowsAndCols(matrixToModify, row - 1, col, searchedTarget, 1);
+            PopRowsAndCols(matrixToModify, row + 1, col, searchedTarget, 2);
             return false;
         }
 
-        static bool doit(byte[,] matrix)
+        static bool CollapseRows(byte[,] matrix)
         {
             bool isWinner = true;
-            Stack<byte> stek = new Stack<byte>();
-            int columnLenght = matrix.GetLength(0);
-            for (int j = 0; j < matrix.GetLength(1); j++)
+            Stack<byte> stack = new Stack<byte>();
+
+            int rows = matrix.GetLength(0);
+
+            for (int col = 0; col < matrix.GetLength(1); col++)
             {
-                for (int i = 0; i < columnLenght; i++)
+                for (int i = 0; i < rows; i++)
                 {
-                    if (matrix[i, j] != 0)
+                    if (matrix[i, col] != 0)
                     {
                         isWinner = false;
-                        stek.Push(matrix[i, j]);
+                        stack.Push(matrix[i, col]);
                     }
                 }
-                for (int k = columnLenght - 1; (k >= 0); k--)
+                for (int k = rows - 1; k >= 0 ; k--)
                 {
-                    try
+                    if(stack.Count > 0)
                     {
-                        matrix[k, j] = stek.Pop();
+                        matrix[k, col] = stack.Pop();
                     }
-                    catch (Exception)
+                    else
                     {
-                        matrix[k, j] = 0;
+                        matrix[k, col] = 0;
                     }
                 }
             }
@@ -199,8 +142,7 @@ namespace Balloons_Pops_game
 
         static void sortAndPrintChartFive(string[,] tableToSort)
         {
-
-            List<structOfRow> klasirane = new List<structOfRow>();
+            List<ScoreEntry> scores = new List<ScoreEntry>();
 
             for (int i = 0; i < 5; i++)
             {
@@ -209,16 +151,15 @@ namespace Balloons_Pops_game
                     break;
                 }
 
-                klasirane.Add(new structOfRow(int.Parse(tableToSort[i, 0]), tableToSort[i, 1]));
-
+                scores.Add(new ScoreEntry(int.Parse(tableToSort[i, 0]), tableToSort[i, 1]));
             }
 
-            klasirane.Sort();
+            scores.Sort();
             Console.WriteLine("---------TOP FIVE CHART-----------");
-            for (int i = 0; i < klasirane.Count; ++i)
+            for (int i = 0; i < scores.Count; ++i)
             {
-                structOfRow slot = klasirane[i];
-                Console.WriteLine("{2}.   {0} with {1} moves.", slot.Name, slot.Value, i + 1);
+                ScoreEntry slot = scores[i];
+                Console.WriteLine("{2}.   {0} with {1} moves.", slot.Name, slot.Score, i + 1);
             }
             Console.WriteLine("----------------------------------");
 
@@ -268,7 +209,7 @@ namespace Balloons_Pops_game
         {
             string[,] topFive = new string[5, 2];
             string userInput = string.Empty;
-            byte[,] playingField = gen(5, 10);
+            byte[,] playingField = GeneratePlayField(5, 10);
             int userMoves = 0;
 
             PrintField(playingField);
@@ -304,13 +245,14 @@ namespace Balloons_Pops_game
                             }
                             
 
-                            if (change(playingField, userRow, userColumn))
+                            if (PopBalloons(playingField, userRow, userColumn))
                             {
                                 Console.WriteLine("cannot pop missing ballon!");
                                 continue;
                             }
+
                             userMoves++;
-                            if (doit(playingField))
+                            if (CollapseRows(playingField))
                             {
                                 Console.WriteLine("Gratz ! You completed it in {0} moves.", userMoves);
                                 if (signIfSkilled(topFive, userMoves))
@@ -321,7 +263,7 @@ namespace Balloons_Pops_game
                                 {
                                     Console.WriteLine("I am sorry you are not skillful enough for TopFive chart!");
                                 }
-                                playingField = gen(5, 10);
+                                playingField = GeneratePlayField(5, 10);
                                 userMoves = 0;
                             }
                             PrintField(playingField);
@@ -342,7 +284,7 @@ namespace Balloons_Pops_game
 
         private static void RestartGame(ref byte[,] playingField, ref int userMoves)
         {
-            playingField = gen(5, 10);
+            playingField = GeneratePlayField(5, 10);
             PrintField(playingField);
             userMoves = 0;
         }
