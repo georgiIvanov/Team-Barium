@@ -1,0 +1,5 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\bin\Debug\ConsoleApplication1.exe
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\obj\x86\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\obj\x86\Debug\ConsoleApplication1.pdb

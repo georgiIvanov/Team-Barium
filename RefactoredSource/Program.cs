@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-// kolko me cepi glavata, piqna sym ot vcera, sha vyrna li vodkata ili sha ya poema, dajte mi bira, da iztrezneyaaa
-
 namespace Balloons_Pops_game
 {
     public struct structOfRow : IComparable<structOfRow>
     {
-        
+
         public int Value;
         public string Name;
-        public structOfRow(int value,string name)
+        public structOfRow(int value, string name)
         {
-            
+
             Value = value;
             Name = name;
         }
@@ -24,11 +22,11 @@ namespace Balloons_Pops_game
     }
     class Program
     {
-        static byte[,] gen(byte rows,byte columns)
+        static byte[,] gen(byte rows, byte columns)
         {
-            byte[,] temp = new byte[rows,columns];
+            byte[,] temp = new byte[rows, columns];
             Random randNumber = new Random();
-            for(byte row = 0;row<rows;row++)
+            for (byte row = 0; row < rows; row++)
             {
                 for (byte column = 0; column < columns; column++)
                 {
@@ -42,7 +40,7 @@ namespace Balloons_Pops_game
             return temp;
         }
 
-        static void printMatrix(byte[,] matrix)
+        static void PrintField(byte[,] matrix)
         {
             Console.Write("    ");
             for (byte column = 0; column < matrix.GetLongLength(1); column++)
@@ -50,21 +48,18 @@ namespace Balloons_Pops_game
                 Console.Write(column + " ");
             }
 
-            
+
             Console.Write("\n   ");
-            for (byte column = 0; column < matrix.GetLongLength(1)*2+1; column++)
+            for (byte column = 0; column < matrix.GetLongLength(1) * 2 + 1; column++)
             {
                 Console.Write("-");
-
-
-
             }
 
-            Console.WriteLine();         // trinket stuff for printMatrix() till here
+            Console.WriteLine();
 
-            for (byte i = 0; i < matrix.GetLongLength(0); i++)  
+            for (byte i = 0; i < matrix.GetLongLength(0); i++)
             {
-                Console.Write(i+" | ");
+                Console.Write(i + " | ");
                 for (byte j = 0; j < matrix.GetLongLength(1); j++)
                 {
                     if (matrix[i, j] == 0)
@@ -81,33 +76,29 @@ namespace Balloons_Pops_game
                 Console.WriteLine();
             }
 
-
-
-            Console.Write("   ");     //some trinket stuff again
+            Console.Write("   ");
             for (byte column = 0; column < matrix.GetLongLength(1) * 2 + 1; column++)
             {
                 Console.Write("-");
             }
             Console.WriteLine();
-
-
-
-        }        
-        static void checkLeft(byte[,] matrix,int row,int column,int searchedItem)
+        }
+        static void checkLeft(byte[,] matrix, int row, int column, int searchedItem)
+        {
+            int newRow = row;
+            int newColumn = column - 1;
+            try
             {
-                int newRow = row;
-                int newColumn = column - 1;
-                try
+                if (matrix[newRow, newColumn] == searchedItem)
                 {
-                    if (matrix[newRow, newColumn] == searchedItem)
-                    {
-                        matrix[newRow, newColumn] = 0; checkLeft(matrix, newRow, newColumn, searchedItem);
-                    }
-                    else return;
-                }catch(IndexOutOfRangeException)
-                    {return;} 
-                    
+                    matrix[newRow, newColumn] = 0; checkLeft(matrix, newRow, newColumn, searchedItem);
+                }
+                else return;
             }
+            catch (IndexOutOfRangeException)
+            { return; }
+
+        }
         static void checkRight(byte[,] matrix, int row, int column, int searchedItem)
         {
             int newRow = row;
@@ -127,8 +118,8 @@ namespace Balloons_Pops_game
         }
         static void checkUp(byte[,] matrix, int row, int column, int searchedItem)
         {
-            int newRow = row+1;
-            int newColumn = column ;
+            int newRow = row + 1;
+            int newColumn = column;
             try
             {
                 if (matrix[newRow, newColumn] == searchedItem)
@@ -140,7 +131,7 @@ namespace Balloons_Pops_game
             }
             catch (IndexOutOfRangeException)
             { return; }
-			        }
+        }
 
         static void checkDown(byte[,] matrix, int row, int column, int searchedItem)
         {
@@ -158,12 +149,12 @@ namespace Balloons_Pops_game
             catch (IndexOutOfRangeException)
             { return; }
 
-        }          
+        }
         static bool change(byte[,] matrixToModify, int rowAtm, int columnAtm)
         {
             if (matrixToModify[rowAtm, columnAtm] == 0)
             {
-                 return true;
+                return true;
             }
             byte searchedTarget = matrixToModify[rowAtm, columnAtm];
             matrixToModify[rowAtm, columnAtm] = 0;
@@ -181,21 +172,21 @@ namespace Balloons_Pops_game
             bool isWinner = true;
             Stack<byte> stek = new Stack<byte>();
             int columnLenght = matrix.GetLength(0);
-            for (int j=0;j<matrix.GetLength(1) ;j++ )
+            for (int j = 0; j < matrix.GetLength(1); j++)
             {
                 for (int i = 0; i < columnLenght; i++)
                 {
-                    if(matrix[i,j]!=0)
+                    if (matrix[i, j] != 0)
                     {
                         isWinner = false;
                         stek.Push(matrix[i, j]);
-                    }                        
+                    }
                 }
-                for (int k = columnLenght-1; (k >= 0); k--)
+                for (int k = columnLenght - 1; (k >= 0); k--)
                 {
                     try
                     {
-                        matrix[k, j] = stek.Pop(); 
+                        matrix[k, j] = stek.Pop();
                     }
                     catch (Exception)
                     {
@@ -203,44 +194,44 @@ namespace Balloons_Pops_game
                     }
                 }
             }
-                return isWinner;
+            return isWinner;
         }
 
         static void sortAndPrintChartFive(string[,] tableToSort)
         {
-            
+
             List<structOfRow> klasirane = new List<structOfRow>();
 
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0; i < 5; i++)
             {
-                if (tableToSort[i, 0] == null) 
-                { 
-                    break; 
+                if (tableToSort[i, 0] == null)
+                {
+                    break;
                 }
-                
-                klasirane.Add(new structOfRow(int.Parse(tableToSort[i, 0]),tableToSort[i,1]));
-               
+
+                klasirane.Add(new structOfRow(int.Parse(tableToSort[i, 0]), tableToSort[i, 1]));
+
             }
-            
+
             klasirane.Sort();
             Console.WriteLine("---------TOP FIVE CHART-----------");
-            for (int i = 0; i<klasirane.Count; ++i)
+            for (int i = 0; i < klasirane.Count; ++i)
             {
                 structOfRow slot = klasirane[i];
-                Console.WriteLine("{2}.   {0} with {1} moves.", slot.Name, slot.Value,i+1);
+                Console.WriteLine("{2}.   {0} with {1} moves.", slot.Name, slot.Value, i + 1);
             }
             Console.WriteLine("----------------------------------");
 
-            
+
         }
 
-        static bool signIfSkilled(string[,] Chart,int points) 
+        static bool signIfSkilled(string[,] Chart, int points)
         {
             bool Skilled = false;
-            int worstMoves=0;
-            int worstMovesChartPosition=0;
+            int worstMoves = 0;
+            int worstMovesChartPosition = 0;
             for (int i = 0; i < 5; i++)
-            {      
+            {
                 if (Chart[i, 0] == null)
                 {
                     Console.WriteLine("Type in your name.");
@@ -249,20 +240,20 @@ namespace Balloons_Pops_game
                     Chart[i, 1] = tempUserName;
                     Skilled = true;
                     break;
-                 }
+                }
             }
-            if (Skilled == false) 
+            if (Skilled == false)
             {
                 for (int i = 0; i < 5; i++)
+                {
+                    if (int.Parse(Chart[i, 0]) > worstMoves)
                     {
-                        if (int.Parse(Chart[i, 0]) > worstMoves)
-                        {
-                            worstMovesChartPosition = i;
-                            worstMoves = int.Parse(Chart[i, 0]);
-                        }
+                        worstMovesChartPosition = i;
+                        worstMoves = int.Parse(Chart[i, 0]);
                     }
+                }
             }
-            if (points < worstMoves && Skilled == false) 
+            if (points < worstMoves && Skilled == false)
             {
                 Console.WriteLine("Type in your name.");
                 string tempUserName = Console.ReadLine();
@@ -275,76 +266,103 @@ namespace Balloons_Pops_game
 
         static void Main(string[] args)
         {
-            string[,] topFive = new string[5,2];
-            byte[,] matrix = gen(5, 10);
-
-            printMatrix(matrix);
-            string temp=null;
+            string[,] topFive = new string[5, 2];
+            string userInput = string.Empty;
+            byte[,] playingField = gen(5, 10);
             int userMoves = 0;
-            while (temp != "EXIT")
+
+            PrintField(playingField);
+
+            while (userInput != "exit")
             {
-                Console.WriteLine("Enter a row and column: ");                
-                temp=Console.ReadLine();
-                temp=temp.ToUpper().Trim();
-                
-                switch (temp) 
+                Console.WriteLine("Enter a row and column: ");
+                userInput = GetInput();
+
+                switch (userInput)
                 {
-                    case "RESTART":
-                        matrix = gen(5, 10);
-                        printMatrix(matrix);
-                        userMoves = 0;
+                    case "restart":
+                        RestartGame(ref playingField, ref userMoves);
                         break;
 
-                    case "TOP":
-                        sortAndPrintChartFive(topFive);
+                    case "top":
+                        sortAndPrintChartFive(topFive); // brake in two distinct parts with output
+                        break;
+                    case "exit": 
                         break;
 
-                    default :
-                        if ((temp.Length == 3) && (temp[0] >= '0' && temp[0] <= '9') && (temp[2] >= '0' && temp[2] <= '9') && (temp[1] == ' ' || temp[1] == '.' || temp[1] == ','))
+                    default:
+                        if (CheckMoveValidity(userInput))
                         {
                             int userRow, userColumn;
-                            userRow = int.Parse(temp[0].ToString());
-                            if (userRow > 4) 
+                            userRow = ConvertCharToInt(userInput[0]);
+                            userColumn = ConvertCharToInt(userInput[2]);
+
+                            if (userRow > 4 || userRow < 0 || userColumn > 9 || userColumn < 0)
                             {
                                 Console.WriteLine("Wrong input ! Try Again ! ");
                                 continue;
                             }
-                            userColumn = int.Parse(temp[2].ToString());
                             
-                            if (change(matrix, userRow, userColumn))
+
+                            if (change(playingField, userRow, userColumn))
                             {
                                 Console.WriteLine("cannot pop missing ballon!");
                                 continue;
                             }
                             userMoves++;
-                            if (doit(matrix))
+                            if (doit(playingField))
                             {
                                 Console.WriteLine("Gratz ! You completed it in {0} moves.", userMoves);
                                 if (signIfSkilled(topFive, userMoves))
                                 {
                                     sortAndPrintChartFive(topFive);
                                 }
-                                else 
+                                else
                                 {
                                     Console.WriteLine("I am sorry you are not skillful enough for TopFive chart!");
                                 }
-                                matrix = gen(5, 10);
+                                playingField = gen(5, 10);
                                 userMoves = 0;
                             }
-                            printMatrix(matrix);
+                            PrintField(playingField);
                             break;
                         }
                         else
-                        { 
+                        {
                             Console.WriteLine("Wrong input ! Try Again ! ");
                             break;
                         }
-                        
+
 
                 }
             }
             Console.WriteLine("Good Bye! ");
 
+        }
+
+        private static void RestartGame(ref byte[,] playingField, ref int userMoves)
+        {
+            playingField = gen(5, 10);
+            PrintField(playingField);
+            userMoves = 0;
+        }
+
+        private static bool CheckMoveValidity(string userInput)
+        {
+            return (userInput.Length == 3) &&
+                 (userInput[0] >= '0' && userInput[0] <= '4') &&
+                 (userInput[2] >= '0' && userInput[2] <= '9') &&
+                 (userInput[1] == ' ' || userInput[1] == '.' || userInput[1] == ',');
+        }
+
+        static string GetInput()
+        {
+            return Console.ReadLine().ToLower().Trim();
+        }
+
+        static int ConvertCharToInt(char input)
+        {
+            return input - '0';
         }
     }
 }
