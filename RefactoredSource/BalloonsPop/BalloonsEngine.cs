@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Balloons_Pops_game
 {
-    class BalloonsEngine
+    public class BalloonsEngine
     {
         int fieldRows, fieldCols, userMoves;
         int[,] playField;

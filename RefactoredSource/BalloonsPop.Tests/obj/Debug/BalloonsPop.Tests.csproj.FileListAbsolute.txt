@@ -1,0 +1,7 @@
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Tests.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Tests.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.exe
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.dll
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.pdb

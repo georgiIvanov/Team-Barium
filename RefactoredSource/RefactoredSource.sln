@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonsPop", "BalloonsPop\BalloonsPop.csproj", "{560B022B-92BE-4CA1-A9D0-A3C36C64A748}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonsPop.Tests", "BalloonsPop.Tests\BalloonsPop.Tests.csproj", "{93EF5AED-D23C-45D5-A7E8-35B542D862FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{560B022B-92BE-4CA1-A9D0-A3C36C64A748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{560B022B-92BE-4CA1-A9D0-A3C36C64A748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{560B022B-92BE-4CA1-A9D0-A3C36C64A748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93EF5AED-D23C-45D5-A7E8-35B542D862FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93EF5AED-D23C-45D5-A7E8-35B542D862FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93EF5AED-D23C-45D5-A7E8-35B542D862FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93EF5AED-D23C-45D5-A7E8-35B542D862FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
