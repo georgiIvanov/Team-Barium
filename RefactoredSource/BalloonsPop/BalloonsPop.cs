@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Balloons_Pops_game
 {
@@ -9,8 +7,10 @@ namespace Balloons_Pops_game
         static void Main(string[] args)
         {
             string userInput = string.Empty;
+            string restartMessage = "Welcome to “Balloons Pops” game. Please try to pop the balloons. Use 'top' to view the top scoreboard, 'restart' to start a new game and 'exit' to quit the game.";
             BalloonsEngine game = new BalloonsEngine(5, 10);
 
+            Console.WriteLine(restartMessage);
             Console.WriteLine(game.FieldOutput()); 
 
             while (userInput != "exit")
@@ -21,6 +21,8 @@ namespace Balloons_Pops_game
                 switch (userInput)
                 {
                     case "restart":
+                        Console.WriteLine();
+                        Console.WriteLine(restartMessage);
                         game.RestartGame();
                         Console.WriteLine(game.FieldOutput()); 
                         break;
@@ -38,7 +40,7 @@ namespace Balloons_Pops_game
                         }
                         else
                         {
-                            Console.WriteLine("Wrong input ! Try Again ! ");
+                            Console.WriteLine("Invalid move or command! Try Again! ");
                         }
                         break;
                 }

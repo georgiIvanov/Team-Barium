@@ -73,6 +73,15 @@ namespace BalloonsPop.Tests
         }
 
         [TestMethod]
+        public void CheckMoveValidityInputRestart()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            bool result = game.CheckMoveValidity("restart");
+
+            Assert.AreEqual(false, result, "Invalid input cell!");
+        }
+
+        [TestMethod]
         public void CheckMoveValidityInputNegativeNum()
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
@@ -97,5 +106,39 @@ namespace BalloonsPop.Tests
 
             Assert.AreEqual(false, result, "Invalid input cell!");
         }
+
+        //[TestMethod]
+        //public void CheckIfWinningOutput()
+        //{
+        //    BalloonsEngine game = new BalloonsEngine(5, 10);
+        //    game.playField = new int[,]
+        //    { 
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //    };
+        //    bool result = game.CheckIfWinning();
+        //
+        //    Assert.AreEqual(true, result);
+        //}
+
+        //[TestMethod]
+        //public void CheckIfWinningOutput()
+        //{
+        //    BalloonsEngine game = new BalloonsEngine(5, 10);
+        //    game.playField = new int[,]
+        //    { 
+        //        {0,0,0,0,0,0,0,0,0,0},
+        //        {0,0,1,0,0,0,0,0,0,0},
+        //        {0,0,1,1,0,0,0,0,0,0},
+        //        {0,0,0,0,0,0,0,4,0,0},
+        //        {0,0,0,0,0,0,0,4,0,0},
+        //    };
+        //    bool result = game.CheckIfWinning();
+        //
+        //    Assert.AreEqual(false, result);
+        //}
     }
 }

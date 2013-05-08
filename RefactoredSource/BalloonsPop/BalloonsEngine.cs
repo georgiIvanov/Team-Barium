@@ -9,7 +9,7 @@ namespace Balloons_Pops_game
         private readonly int fieldRows;
         private readonly int fieldCols;
         private int userMoves;
-        private int[,] playField;
+        int[,] playField;
         private readonly string[,] topFive;
 
         public BalloonsEngine(int rows, int columns)
@@ -17,7 +17,7 @@ namespace Balloons_Pops_game
             this.playField = GeneratePlayField(rows, columns);
             this.fieldRows = rows;
             this.fieldCols = columns;
-            this.userMoves = 0;
+            this.UserMoves = 0;
             this.topFive = new string[5, 2];
         }
 
@@ -200,8 +200,8 @@ namespace Balloons_Pops_game
 
         public void RestartGame()
         {
-            playField = GeneratePlayField(5, 10);
-            userMoves = 0;
+            this.playField = GeneratePlayField(5, 10);
+            this.UserMoves = 0;
         }
 
         public string GenerateChart()
@@ -261,7 +261,7 @@ namespace Balloons_Pops_game
 
         public void RecordHighscore(string username, int place)
         {
-            topFive[place, 0] = userMoves.ToString();
+            topFive[place, 0] = UserMoves.ToString();
             topFive[place, 1] = username;
         }
     }
