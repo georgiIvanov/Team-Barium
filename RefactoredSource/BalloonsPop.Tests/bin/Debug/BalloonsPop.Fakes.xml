@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BalloonsPop.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Balloons_Pops_game.Fakes.ShimBalloonsEngine">
+            <summary>Shim type of Balloons_Pops_game.BalloonsEngine</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsEngine.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsEngine.#ctor(Balloons_Pops_game.BalloonsEngine)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsEngine.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsEngine.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.ChartPlaceIndex">
+            <summary>Sets the shim of BalloonsEngine.ChartPlaceIndex()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.CheckIfWinning">
+            <summary>Sets the shim of BalloonsEngine.CheckIfWinning()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.CheckMoveValidityString">
+            <summary>Sets the shim of BalloonsEngine.CheckMoveValidity(String userInput)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.CollapseRows">
+            <summary>Sets the shim of BalloonsEngine.CollapseRows()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.ConstructorInt32Int32">
+            <summary>Sets the shim of BalloonsEngine.BalloonsEngine(Int32 rows, Int32 columns)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.FieldColumnsGet">
+            <summary>Sets the shim of BalloonsEngine.get_FieldColumns()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.FieldOutput">
+            <summary>Sets the shim of BalloonsEngine.FieldOutput()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.FieldRowsGet">
+            <summary>Sets the shim of BalloonsEngine.get_FieldRows()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.GenerateChart">
+            <summary>Sets the shim of BalloonsEngine.GenerateChart()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.GeneratePlayFieldInt32Int32">
+            <summary>Sets the shim of BalloonsEngine.GeneratePlayField(Int32 rows, Int32 columns)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.PopRowsAndColsInt32Int32Int32Int32">
+            <summary>Sets the shim of BalloonsEngine.PopRowsAndCols(Int32 row, Int32 col, Int32 searchedItem, Int32 direction)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.RecordHighscoreStringInt32">
+            <summary>Sets the shim of BalloonsEngine.RecordHighscore(String username, Int32 place)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.RestartGame">
+            <summary>Sets the shim of BalloonsEngine.RestartGame()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.TryPopBalloonsInt32Int32">
+            <summary>Sets the shim of BalloonsEngine.TryPopBalloons(Int32 row, Int32 col)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.UserMovesGet">
+            <summary>Sets the shim of BalloonsEngine.get_UserMoves()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.UserMovesSetInt32">
+            <summary>Sets the shim of BalloonsEngine.set_UserMoves(Int32 value)</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.ChartPlaceIndex">
+            <summary>Sets the shim of BalloonsEngine.ChartPlaceIndex()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.CheckIfWinning">
+            <summary>Sets the shim of BalloonsEngine.CheckIfWinning()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.CheckMoveValidityString">
+            <summary>Sets the shim of BalloonsEngine.CheckMoveValidity(String userInput)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.CollapseRows">
+            <summary>Sets the shim of BalloonsEngine.CollapseRows()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.FieldColumnsGet">
+            <summary>Sets the shim of BalloonsEngine.get_FieldColumns()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.FieldOutput">
+            <summary>Sets the shim of BalloonsEngine.FieldOutput()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.FieldRowsGet">
+            <summary>Sets the shim of BalloonsEngine.get_FieldRows()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.GenerateChart">
+            <summary>Sets the shim of BalloonsEngine.GenerateChart()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32">
+            <summary>Sets the shim of BalloonsEngine.GeneratePlayField(Int32 rows, Int32 columns)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.PopRowsAndColsInt32Int32Int32Int32">
+            <summary>Sets the shim of BalloonsEngine.PopRowsAndCols(Int32 row, Int32 col, Int32 searchedItem, Int32 direction)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.RecordHighscoreStringInt32">
+            <summary>Sets the shim of BalloonsEngine.RecordHighscore(String username, Int32 place)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.RestartGame">
+            <summary>Sets the shim of BalloonsEngine.RestartGame()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.TryPopBalloonsInt32Int32">
+            <summary>Sets the shim of BalloonsEngine.TryPopBalloons(Int32 row, Int32 col)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.UserMovesGet">
+            <summary>Sets the shim of BalloonsEngine.get_UserMoves()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.UserMovesSetInt32">
+            <summary>Sets the shim of BalloonsEngine.set_UserMoves(Int32 value)</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.ShimScoreEntry">
+            <summary>Shim type of Balloons_Pops_game.ScoreEntry</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimScoreEntry.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimScoreEntry.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimScoreEntry.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimScoreEntry.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.ShimScoreEntry.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.StubBalloonsEngine">
+            <summary>Stub type of Balloons_Pops_game.BalloonsEngine</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.StubBalloonsEngine.#ctor(System.Int32,System.Int32)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.StubBalloonsEngine.InitializeStub">
+            <summary>Initializes a new instance of type StubBalloonsEngine</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsEngine.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsEngine.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsEngine.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

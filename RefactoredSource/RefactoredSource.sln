@@ -6,6 +6,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalloonsPop.Tests", "BalloonsPop.Tests\BalloonsPop.Tests.csproj", "{93EF5AED-D23C-45D5-A7E8-35B542D862FE}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://georgiivanov.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BalloonsPop.Tests\\BalloonsPop.Tests.csproj
+		SccProjectName1 = BalloonsPop.Tests
+		SccLocalPath1 = BalloonsPop.Tests
+		SccProjectUniqueName2 = BalloonsPop\\BalloonsPop.csproj
+		SccProjectName2 = BalloonsPop
+		SccLocalPath2 = BalloonsPop
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

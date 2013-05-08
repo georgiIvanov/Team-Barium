@@ -31,6 +31,7 @@ namespace Balloons_Pops_game
                 this.userMoves = value;
             }
         }
+
         public int FieldRows
         {
             get
@@ -257,7 +258,7 @@ namespace Balloons_Pops_game
             return userPlace;
         }
 
-        public void signIfSkilled(string username, int place)
+        public void RecordHighscore(string username, int place)
         {
             topFive[place, 0] = userMoves.ToString();
             topFive[place, 1] = username;
