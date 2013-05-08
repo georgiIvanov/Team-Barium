@@ -65,3 +65,16 @@ C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\Fakes\bp\o\f.csprojResolveAssemblyReference.cache
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Fakes.dll
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Fakes.xml
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Tests.dll
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Tests.pdb
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.exe
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Fakes.dll
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\mscorlib.4.0.0.0.Fakes.dll
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\System.4.0.0.0.Fakes.dll
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.pdb
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\BalloonsPop.Fakes.xml
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\mscorlib.4.0.0.0.Fakes.xml
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\bin\Debug\System.4.0.0.0.Fakes.xml
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.csprojResolveAssemblyReference.cache
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.dll
+D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop.Tests\obj\Debug\BalloonsPop.Tests.pdb

@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Balloons_Pops_game
 {
     public class BalloonsEngine
     {
-        int fieldRows, fieldCols, userMoves;
+        private readonly int fieldRows;
+        private readonly int fieldCols;
+        private int userMoves;
         int[,] playField;
-        string[,] topFive;
+        private readonly string[,] topFive;
 
         public BalloonsEngine(int rows, int columns)
         {
-            playField = GeneratePlayField(rows, columns);
-            fieldRows = rows;
-            fieldCols = columns;
-            userMoves = 0;
-            topFive = new string[5, 2];
+            this.playField = GeneratePlayField(rows, columns);
+            this.fieldRows = rows;
+            this.fieldCols = columns;
+            this.UserMoves = 0;
+            this.topFive = new string[5, 2];
         }
 
         public int UserMoves
         {
             get
             {
-                return userMoves;
+                return this.userMoves;
             }
             set
             {
@@ -36,7 +37,7 @@ namespace Balloons_Pops_game
         {
             get
             {
-                return fieldRows;
+                return this.fieldRows;
             }
         }
         public int FieldColumns
@@ -47,10 +48,11 @@ namespace Balloons_Pops_game
             }
         }
 
-        int[,] GeneratePlayField(int rows, int columns)
+        private int[,] GeneratePlayField(int rows, int columns)
         {
             int[,] playField = new int[rows, columns];
             Random randNumber = new Random();
+
             for (int row = 0; row < rows; row++)
             {
                 for (int column = 0; column < columns; column++)
@@ -58,6 +60,7 @@ namespace Balloons_Pops_game
                     playField[row, column] = randNumber.Next(1, 5);
                 }
             }
+
             return playField;
         }
 
@@ -197,8 +200,8 @@ namespace Balloons_Pops_game
 
         public void RestartGame()
         {
-            playField = GeneratePlayField(5, 10);
-            userMoves = 0;
+            this.playField = GeneratePlayField(5, 10);
+            this.UserMoves = 0;
         }
 
         public string GenerateChart()
@@ -258,7 +261,7 @@ namespace Balloons_Pops_game
 
         public void RecordHighscore(string username, int place)
         {
-            topFive[place, 0] = userMoves.ToString();
+            topFive[place, 0] = UserMoves.ToString();
             topFive[place, 1] = username;
         }
     }
