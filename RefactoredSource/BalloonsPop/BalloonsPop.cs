@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Balloons_Pops_game
 {
-    class Program
+    class BalloonsPop
     {
         static void Main(string[] args)
         {
