@@ -192,8 +192,6 @@ namespace Balloons_Pops_game
                 case 2: PopRowsAndCols(row + 1, col, searchedItem, direction); break;
                 case 3: PopRowsAndCols(row, col - 1, searchedItem, direction); break;
                 case 4: PopRowsAndCols(row, col + 1, searchedItem, direction); break;
-                default:
-                    break;
             }
         }
 
