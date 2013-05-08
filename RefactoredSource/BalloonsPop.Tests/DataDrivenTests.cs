@@ -27,9 +27,9 @@ namespace BalloonsPop.Tests
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
-                Assert.AreEqual(valuesAreEqual, true);
+                Assert.AreEqual(valuesAreEqual, true, "First row and col of balloons weren't popped.");
             }
         }
 
@@ -51,9 +51,9 @@ namespace BalloonsPop.Tests
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
-                Assert.AreEqual(valuesAreEqual, true);
+                Assert.AreEqual(valuesAreEqual, true, "Second row and col were not popped and collapsed properly.");
             }
         }
 
@@ -74,9 +74,9 @@ namespace BalloonsPop.Tests
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
-                Assert.AreEqual(valuesAreEqual, true);
+                Assert.AreEqual(valuesAreEqual, true, "Second col didn't pop properly.");
             }
         }
 
@@ -98,9 +98,9 @@ namespace BalloonsPop.Tests
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
-                Assert.AreEqual(valuesAreEqual, true);
+                Assert.AreEqual(valuesAreEqual, true, "Fourth row and 9th col didn't pop and collapse properly.");
             }
         }
 
@@ -122,9 +122,9 @@ namespace BalloonsPop.Tests
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
-                Assert.AreEqual(valuesAreEqual, true);
+                Assert.AreEqual(valuesAreEqual, true, "Popping empty cell, field shouldn't change");
             }
         }
         

@@ -14,7 +14,7 @@ namespace BalloonsPop.Tests
         static string filePath;
         static int expectedRow, expectedCol;
 
-        public static bool CheckFieldsEquality(int[,] gameField, int[,] expectedOutput)
+        public static bool CheckPlayFields(int[,] gameField, int[,] expectedOutput)
         {
             bool valuesAreEqual = true;
             for (int i = 0; i < expectedRow && valuesAreEqual == true; i++)
