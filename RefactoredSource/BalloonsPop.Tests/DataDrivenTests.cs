@@ -138,14 +138,15 @@ namespace BalloonsPop.Tests
                 ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32
                 = (game1, x, y) => TestUtils.GenerateFieldShim(game, 5, 10);
 
-                TestUtils.FileName("05.AllOnesInput.xml");
+                TestUtils.FileName("05.ExampleInput.xml");
                 game = new BalloonsEngine(5, 10);
                 game.TryPopBalloons(1, 5);
+                game.CollapseRows();
 
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
                 Assert.AreEqual(valuesAreEqual, true);
             }
@@ -161,14 +162,15 @@ namespace BalloonsPop.Tests
                 ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32
                 = (game1, x, y) => TestUtils.GenerateFieldShim(game, 5, 10);
 
-                TestUtils.FileName("06.AllOnesInput.xml");
+                TestUtils.FileName("06.ExampleInput.xml");
                 game = new BalloonsEngine(5, 10);
                 game.TryPopBalloons(3, 4);
+                game.CollapseRows();
 
                 int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
                 int[,] expectedOutput = TestUtils.GetExpectedOutput();
 
-                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
 
                 Assert.AreEqual(valuesAreEqual, true);
             }
