@@ -127,8 +127,51 @@ namespace BalloonsPop.Tests
                 Assert.AreEqual(valuesAreEqual, true, "Popping empty cell, field shouldn't change");
             }
         }
-        
 
+        [TestMethod]
+        public void PopFirstRowAndFifthCol()
+        {
+            using (ShimsContext.Create())
+            {
+                BalloonsEngine game = new BalloonsEngine(0, 0);
 
+                ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32
+                = (game1, x, y) => TestUtils.GenerateFieldShim(game, 5, 10);
+
+                TestUtils.FileName("05.AllOnesInput.xml");
+                game = new BalloonsEngine(5, 10);
+                game.TryPopBalloons(1, 5);
+
+                int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
+                int[,] expectedOutput = TestUtils.GetExpectedOutput();
+
+                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+
+                Assert.AreEqual(valuesAreEqual, true);
+            }
+        }
+
+        [TestMethod]
+        public void PopThirdRowAndFourthCol()
+        {
+            using (ShimsContext.Create())
+            {
+                BalloonsEngine game = new BalloonsEngine(0, 0);
+
+                ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32
+                = (game1, x, y) => TestUtils.GenerateFieldShim(game, 5, 10);
+
+                TestUtils.FileName("06.AllOnesInput.xml");
+                game = new BalloonsEngine(5, 10);
+                game.TryPopBalloons(3, 4);
+
+                int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
+                int[,] expectedOutput = TestUtils.GetExpectedOutput();
+
+                bool valuesAreEqual = TestUtils.CheckFieldsEquality(gameField, expectedOutput);
+
+                Assert.AreEqual(valuesAreEqual, true);
+            }
+        }
     }
 }
