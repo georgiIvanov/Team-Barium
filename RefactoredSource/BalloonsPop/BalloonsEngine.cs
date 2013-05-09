@@ -219,13 +219,20 @@ namespace Balloons_Pops_game
                 scores.Add(new ScoreEntry(int.Parse(topFive[i, 0]), topFive[i, 1]));
             }
 
-            scores.Sort();
-            result.AppendLine("---------TOP FIVE CHART-----------");
-            for (int i = 0; i < scores.Count; ++i)
+            if (scores.Count > 0)
             {
-                result.AppendFormat("{2}. {0} with {1} moves.\n", scores[i].Name, scores[i].Score, i + 1);
+                scores.Sort();
+                result.AppendLine("---------TOP FIVE CHART-----------");
+                for (int i = 0; i < scores.Count; ++i)
+                {
+                    result.AppendFormat("{2}. {0} with {1} moves.\n", scores[i].Name, scores[i].Score, i + 1);
+                }
+                result.AppendLine("----------------------------------");
             }
-            result.AppendLine("----------------------------------");
+            else
+            {
+                result.AppendLine("The scoreboard is empty.");
+            }
 
             return result.ToString();
         }

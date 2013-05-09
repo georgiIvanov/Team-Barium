@@ -29,6 +29,19 @@ namespace BalloonsPop.Tests
         }
 
         [TestMethod]
+        public void FieldOutputRestartGame()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            game.TryPopBalloons(2, 5);
+            game.TryPopBalloons(4, 1);
+            int outputFieldLength = game.FieldOutput().Length;
+            game.RestartGame();
+            int outputFieldLengthAfterRestart = game.FieldOutput().Length;
+
+            Assert.AreEqual(outputFieldLength, outputFieldLengthAfterRestart);
+        }
+
+        [TestMethod]
         public void CheckMoveValidityInput00()
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
