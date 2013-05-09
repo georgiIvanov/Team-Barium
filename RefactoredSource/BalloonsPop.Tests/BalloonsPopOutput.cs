@@ -13,6 +13,7 @@ namespace BalloonsPop.Tests
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
             string outputField = game.FieldOutput();
+
             Assert.AreEqual(217, outputField.Length); 
         }
 
@@ -86,41 +87,37 @@ namespace BalloonsPop.Tests
             BalloonsEngine game = new BalloonsEngine(5, 10);
             game.TryPopBalloons(0, 7);
             bool result = game.TryPopBalloons(0, 7);
+
             Assert.AreEqual(false, result);
         }
 
-        //[TestMethod]
-        //public void CheckIfWinningOutput()
-        //{
-        //    BalloonsEngine game = new BalloonsEngine(5, 10);
-        //    game.playField = new int[,]
-        //    { 
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //    };
-        //    bool result = game.CheckIfWinning();
-        //
-        //    Assert.AreEqual(true, result);
-        //}
+        [TestMethod]
+        public void CheckIfWinningOutputFalse()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            game.TryPopBalloons(2, 6);
+            game.TryPopBalloons(1, 8);
+            bool result = game.CheckIfWinning();
 
-        //[TestMethod]
-        //public void CheckIfWinningOutput()
-        //{
-        //    BalloonsEngine game = new BalloonsEngine(5, 10);
-        //    game.playField = new int[,]
-        //    { 
-        //        {0,0,0,0,0,0,0,0,0,0},
-        //        {0,0,1,0,0,0,0,0,0,0},
-        //        {0,0,1,1,0,0,0,0,0,0},
-        //        {0,0,0,0,0,0,0,4,0,0},
-        //        {0,0,0,0,0,0,0,4,0,0},
-        //    };
-        //    bool result = game.CheckIfWinning();
-        //
-        //    Assert.AreEqual(false, result);
-        //}
+            Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void CheckIfWinningOutputTrue()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+
+            for (int i = 0; i < game.FieldRows; i++)
+            {
+                for (int j = 0; j < game.FieldColumns; j++)
+                {
+                    game.TryPopBalloons(i, j);
+                }
+            }
+
+            bool result = game.CheckIfWinning();
+
+            Assert.AreEqual(true, result);
+        }
     }
 }
