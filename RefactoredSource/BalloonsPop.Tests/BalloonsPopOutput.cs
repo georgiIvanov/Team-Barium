@@ -46,46 +46,10 @@ namespace BalloonsPop.Tests
         }
 
         [TestMethod]
-        public void CheckMoveValidityInput18()
-        {
-            BalloonsEngine game = new BalloonsEngine(5, 10);
-            bool result = game.CheckMoveValidity("1,8");
-
-            Assert.AreEqual(true, result, "Invalid input cell!");
-        }
-
-        [TestMethod]
-        public void CheckMoveValidityInput2Interval9()
-        {
-            BalloonsEngine game = new BalloonsEngine(5, 10);
-            bool result = game.CheckMoveValidity("2, 9");
-
-            Assert.AreEqual(false, result, "Invalid input cell!");
-        }
-
-        [TestMethod]
-        public void CheckMoveValidityInput35()
-        {
-            BalloonsEngine game = new BalloonsEngine(5, 10);
-            bool result = game.CheckMoveValidity("3.5");
-
-            Assert.AreEqual(true, result, "Invalid input cell!");
-        }
-
-        [TestMethod]
-        public void CheckMoveValidityInputRestart()
-        {
-            BalloonsEngine game = new BalloonsEngine(5, 10);
-            bool result = game.CheckMoveValidity("restart");
-
-            Assert.AreEqual(false, result, "Invalid input cell!");
-        }
-
-        [TestMethod]
         public void CheckMoveValidityInputNegativeNum()
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
-            bool result = game.CheckMoveValidity("0 -1");
+            bool result = game.CheckMoveValidity("-2 -1");
 
             Assert.AreEqual(false, result, "Invalid input cell!");
         }
@@ -105,6 +69,24 @@ namespace BalloonsPop.Tests
             bool result = game.CheckMoveValidity(string.Empty);
 
             Assert.AreEqual(false, result, "Invalid input cell!");
+        }
+
+        [TestMethod]
+        public void TryPopBalloonsOutputTrue()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            bool result = game.TryPopBalloons(1, 2);
+
+            Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void TryPopBalloonsOutputFalse()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            game.TryPopBalloons(0, 7);
+            bool result = game.TryPopBalloons(0, 7);
+            Assert.AreEqual(false, result);
         }
 
         //[TestMethod]
