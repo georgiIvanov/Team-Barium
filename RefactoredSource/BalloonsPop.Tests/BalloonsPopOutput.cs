@@ -1,6 +1,7 @@
 ﻿using System;
 using Balloons_Pops_game;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
 
 namespace BalloonsPop.Tests
 {
@@ -131,6 +132,49 @@ namespace BalloonsPop.Tests
             bool result = game.CheckIfWinning();
 
             Assert.AreEqual(true, result);
+        }
+
+        [TestMethod]
+        public void GenerateChartOutputWithoutTop()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+            game.TryPopBalloons(2, 6);
+            string result = game.GenerateChart();
+
+            StringBuilder expectedResult = new StringBuilder();
+            expectedResult.AppendLine("The scoreboard is empty.");
+
+            Assert.AreEqual(expectedResult.ToString(), result);
+        }
+
+        [TestMethod]
+        public void GenerateChartOutputWithTop()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+
+            for (int i = 0; i < game.FieldRows; i++)
+            {
+                for (int j = 0; j < game.FieldColumns; j++)
+                {
+                    game.TryPopBalloons(i, j);
+                    game.UserMoves++;
+                    game.CollapseRows();
+                }
+            }
+            int place = game.ChartPlaceIndex();
+            string result = string.Empty;
+            if (place != -1)
+            {
+                game.RecordHighscore("Bunny", place);
+                result = game.GenerateChart();
+            }
+
+            StringBuilder expectedResult = new StringBuilder();
+            expectedResult.AppendLine("---------TOP FIVE CHART-----------");
+            expectedResult.AppendFormat("{2}. {0} with {1} moves.\n", "Bunny", game.UserMoves, 1);
+            expectedResult.AppendLine("----------------------------------");
+
+            Assert.AreEqual(expectedResult.ToString(), result);
         }
     }
 }
