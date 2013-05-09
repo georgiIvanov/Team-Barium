@@ -8,6 +8,18 @@ namespace BalloonsPop.Tests
     [TestClass]
     public class BalloonsPopOutput
     {
+        public void PopAllBalloons(BalloonsEngine game)
+        {
+            for (int i = 0; i < game.FieldRows; i++)
+            {
+                for (int j = 0; j < game.FieldColumns; j++)
+                {
+                    game.TryPopBalloons(i, j);
+                    game.UserMoves++;
+                    game.CollapseRows();
+                }
+            }
+        }
 
         [TestMethod]
         public void FieldOutputLength()
@@ -121,14 +133,7 @@ namespace BalloonsPop.Tests
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
 
-            for (int i = 0; i < game.FieldRows; i++)
-            {
-                for (int j = 0; j < game.FieldColumns; j++)
-                {
-                    game.TryPopBalloons(i, j);
-                }
-            }
-
+            PopAllBalloons(game);
             bool result = game.CheckIfWinning();
 
             Assert.AreEqual(true, result);
@@ -152,15 +157,7 @@ namespace BalloonsPop.Tests
         {
             BalloonsEngine game = new BalloonsEngine(5, 10);
 
-            for (int i = 0; i < game.FieldRows; i++)
-            {
-                for (int j = 0; j < game.FieldColumns; j++)
-                {
-                    game.TryPopBalloons(i, j);
-                    game.UserMoves++;
-                    game.CollapseRows();
-                }
-            }
+            PopAllBalloons(game);
             int place = game.ChartPlaceIndex();
             string result = string.Empty;
             if (place != -1)
@@ -175,6 +172,32 @@ namespace BalloonsPop.Tests
             expectedResult.AppendLine("----------------------------------");
 
             Assert.AreEqual(expectedResult.ToString(), result);
+        }
+
+        [TestMethod]
+        public void ChartPlaceIndexOutput()
+        {
+            BalloonsEngine game = new BalloonsEngine(5, 10);
+
+            PopAllBalloons(game);
+            int placeResult = game.ChartPlaceIndex();
+            if (placeResult != -1)
+            {
+                game.RecordHighscore("Bunny", placeResult);
+            }
+            game.RestartGame();
+
+            PopAllBalloons(game);
+            placeResult = game.ChartPlaceIndex();
+            if (placeResult != -1)
+            {
+                game.RecordHighscore("Sunny", placeResult);
+            }
+            game.RestartGame();
+            PopAllBalloons(game);
+            placeResult = game.ChartPlaceIndex();
+
+            Assert.AreEqual(2, placeResult);
         }
     }
 }
