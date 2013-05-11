@@ -69,5 +69,18 @@ namespace BalloonsPop.Tests
 
             return playField;
         }
+
+        public static void PopAllBalloons(BalloonsEngine game)
+        {
+            for (int i = 0; i < game.FieldRows; i++)
+            {
+                for (int j = 0; j < game.FieldColumns; j++)
+                {
+                    game.TryPopBalloons(i, j);
+                    game.UserMoves++;
+                    game.CollapseRows();
+                }
+            }
+        }
     }
 }

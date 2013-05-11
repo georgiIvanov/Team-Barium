@@ -66,10 +66,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BalloonsPopOutput.cs" />
+    <Compile Include="BalloonsPopTests.cs" />
     <Compile Include="DataDrivenTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestUtils.cs" />
+    <Compile Include="ChartTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BalloonsPop\BalloonsPop.csproj">

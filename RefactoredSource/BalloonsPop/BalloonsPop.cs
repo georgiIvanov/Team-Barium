@@ -55,13 +55,6 @@ namespace Balloons_Pops_game
             userRow = ConvertCharToInt(userInput[0]);
             userColumn = ConvertCharToInt(userInput[2]);
 
-            if (userRow > game.FieldRows || userRow < 0 ||
-                userColumn > game.FieldColumns || userColumn < 0)
-            {
-                Console.WriteLine("Wrong input! Try Again!");
-            }
-
-
             if (!game.TryPopBalloons(userRow, userColumn))
             {
                 Console.WriteLine("Cannot pop missing ballon!");

@@ -175,5 +175,28 @@ namespace BalloonsPop.Tests
                 Assert.AreEqual(valuesAreEqual, true);
             }
         }
+
+        [TestMethod]
+        public void CollapseRows()
+        {
+            using (ShimsContext.Create())
+            {
+                BalloonsEngine game = new BalloonsEngine(0, 0);
+
+                ShimBalloonsEngine.AllInstances.GeneratePlayFieldInt32Int32
+                = (game1, x, y) => TestUtils.GenerateFieldShim(game, 5, 10);
+
+                TestUtils.FileName("07.CollapseInput.xml");
+                game = new BalloonsEngine(5, 10);
+                game.CollapseRows();
+
+                int[,] gameField = (int[,])typeof(BalloonsEngine).GetField("playField", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(game);
+                int[,] expectedOutput = TestUtils.GetExpectedOutput();
+
+                bool valuesAreEqual = TestUtils.CheckPlayFields(gameField, expectedOutput);
+
+                Assert.AreEqual(valuesAreEqual, true);
+            }
+        }
     }
 }
