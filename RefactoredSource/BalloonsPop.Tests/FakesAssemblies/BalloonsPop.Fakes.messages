@@ -1,3 +1,1 @@
-C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\Fakes\BalloonsPop.fakes : warning : Cannot generate stub for Balloons_Pops_game.Program: type is not visible to exported or assembly(BalloonsPop.Fakes).
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\Fakes\BalloonsPop.fakes : warning : Cannot generate stub for Balloons_Pops_game.ScoreEntry: type is a value type.
-C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop.Tests\Fakes\BalloonsPop.fakes : warning : Cannot generate shim for Balloons_Pops_game.Program: type is not visible to exported or assembly(BalloonsPop.Fakes).

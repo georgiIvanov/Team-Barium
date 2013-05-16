@@ -1,10 +1,7 @@
 D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.exe.config
 D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.exe
 D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.pdb
-C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.exe.config
-C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.exe
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.pdb
-C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.exe
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.pdb
 C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.csprojResolveAssemblyReference.cache
 D:\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.csprojResolveAssemblyReference.cache
@@ -16,3 +13,6 @@ C:\Users\Aneliya\Documents\GitHub\Team-Barium\RefactoredSource\BalloonsPop\bin\D
 C:\Users\Aneliya\Documents\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.csprojResolveAssemblyReference.cache
 C:\Users\Aneliya\Documents\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.exe
 C:\Users\Aneliya\Documents\GitHub\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.pdb
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.exe.config
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\bin\Debug\BalloonsPop.exe
+C:\Users\Georgi\Documents\Visual Studio 2012\Projects\OnlineProjects\Team-Barium\RefactoredSource\BalloonsPop\obj\Debug\BalloonsPop.exe

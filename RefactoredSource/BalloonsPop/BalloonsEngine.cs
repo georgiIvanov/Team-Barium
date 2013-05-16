@@ -33,12 +33,12 @@ namespace Balloons_Pops_game
         /// <summary>
         /// Represents the playfield.
         /// </summary>
-        int[,] playField;
+        private int[,] playField;
 
         /// <summary>
         /// Represents the top five players chart.
         /// </summary>
-        private readonly string[,] topFive;
+        private string[,] topFive;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BalloonsEngine"/> class.

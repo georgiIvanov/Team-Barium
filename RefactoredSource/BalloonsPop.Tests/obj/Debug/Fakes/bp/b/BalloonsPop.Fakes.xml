@@ -118,6 +118,60 @@
         <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsEngine.AllInstances.UserMovesSetInt32">
             <summary>Sets the shim of BalloonsEngine.set_UserMoves(Int32 value)</summary>
         </member>
+        <member name="T:Balloons_Pops_game.Fakes.ShimBalloonsPop">
+            <summary>Shim type of Balloons_Pops_game.BalloonsPop</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsPop.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsPop.#ctor(Balloons_Pops_game.BalloonsPop)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsPop.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.ShimBalloonsPop.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.Constructor">
+            <summary>Sets the shim of BalloonsPop.BalloonsPop()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.ConvertCharToIntChar">
+            <summary>Sets the shim of BalloonsPop.ConvertCharToInt(Char input)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.ExecuteCommandBalloonsEngineString">
+            <summary>Sets the shim of BalloonsPop.ExecuteCommand(BalloonsEngine game, String command)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.GetInput">
+            <summary>Sets the shim of BalloonsPop.GetInput()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.MainStringArray">
+            <summary>Sets the shim of BalloonsPop.Main(String[] args)</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.PrintExitMessage">
+            <summary>Sets the shim of BalloonsPop.PrintExitMessage()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.PrintIllegalMoveMessage">
+            <summary>Sets the shim of BalloonsPop.PrintIllegalMoveMessage()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.PrintIntroMessage">
+            <summary>Sets the shim of BalloonsPop.PrintIntroMessage()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.PrintInvalidCommandMessage">
+            <summary>Sets the shim of BalloonsPop.PrintInvalidCommandMessage()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.PrintMoveMessage">
+            <summary>Sets the shim of BalloonsPop.PrintMoveMessage()</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.ShimBalloonsPop.ProcessMoveStringBalloonsEngine">
+            <summary>Sets the shim of BalloonsPop.ProcessMove(String userInput, BalloonsEngine game)</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.ShimBalloonsPop.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
         <member name="T:Balloons_Pops_game.Fakes.ShimScoreEntry">
             <summary>Shim type of Balloons_Pops_game.ScoreEntry</summary>
         </member>
@@ -152,6 +206,24 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:Balloons_Pops_game.Fakes.StubBalloonsEngine.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:Balloons_Pops_game.Fakes.StubBalloonsPop">
+            <summary>Stub type of Balloons_Pops_game.BalloonsPop</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.StubBalloonsPop.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Balloons_Pops_game.Fakes.StubBalloonsPop.InitializeStub">
+            <summary>Initializes a new instance of type StubBalloonsPop</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsPop.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsPop.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Balloons_Pops_game.Fakes.StubBalloonsPop.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
     </members>
